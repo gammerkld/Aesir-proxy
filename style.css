@@ -124,3 +124,91 @@ body {
 .blue-focus-input::placeholder {
     color: rgba(255, 255, 255, 0.4);
 }
+
+/* --- GAMES PAGE --- */
+.games-layout {
+  padding-top: 110px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.games-subtitle {
+  margin: 0.7rem 0 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.games-status {
+  margin-bottom: 1rem;
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.game-card {
+  display: block;
+  text-decoration: none;
+  color: var(--text-light);
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+  box-shadow: 0 8px 24px rgba(58, 134, 255, 0.2);
+}
+
+.game-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+}
+
+.game-path {
+  margin: 0;
+  font-size: 0.78rem;
+  opacity: 0.75;
+  word-break: break-word;
+}
+
+.inline-repo-link {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.inline-repo-link:hover {
+  text-shadow: 0 0 8px rgba(58, 134, 255, 0.6);
+}
+
+.game-links {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.game-link {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+}
+
+.game-link.primary {
+  color: var(--bg-dark);
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  font-weight: 700;
+}

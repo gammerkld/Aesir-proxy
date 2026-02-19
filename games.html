@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games | Æsir Proxy</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Æ</div>
+    <div class="nav-links">
+      <a href="games.html" class="active">Games</a>
+      <a href="index.html">Home</a>
+      <a href="#">Apps</a>
+      <a href="#">Settings</a>
+    </div>
+  </nav>
+
+  <main class="standard-layout games-layout">
+    <h1 class="page-title">Games Library</h1>
+    <p class="games-subtitle">
+      Synced from
+      <a id="repo-link" class="inline-repo-link" href="https://github.com/selenite-cc/selenite-old" target="_blank" rel="noopener noreferrer">selenite-cc/selenite-old</a>
+      (each folder is a game).
+    </p>
+
+    <div id="games-status" class="games-status">Loading games from GitHub…</div>
+    <div id="games-grid" class="games-grid" aria-live="polite"></div>
+  </main>
+
+  <script>
+    const owner = 'selenite-cc';
+    const repo = 'selenite-old';
+    const branches = ['main', 'master'];
+    const repoBaseUrl = `https://github.com/${owner}/${repo}`;
+    const hostedBaseUrl = `https://${owner}.github.io/${repo}`;
+
+    const statusEl = document.getElementById('games-status');
+    const gridEl = document.getElementById('games-grid');
+
+    const ignoredFolders = new Set([
+      '.github',
+      'assets',
+      'css',
+      'images',
+      'img',
+      'js',
+      'scripts',
+      'styles',
+      'node_modules'
+    ]);
+
+    const toDisplayName = (folderName) => {
+      return folderName
+        .replace(/[-_]+/g, ' ')
+        .replace(/\b\w/g, (char) => char.toUpperCase());
+    };
+
+    const createGameCard = (folderName, branchName) => {
+      const card = document.createElement('article');
+      card.className = 'game-card';
+
+      const title = document.createElement('h2');
+      title.className = 'game-title';
+      title.textContent = toDisplayName(folderName);
+
+      const sourcePath = document.createElement('p');
+      sourcePath.className = 'game-path';
+      sourcePath.textContent = `${folderName}/`;
+
+      const links = document.createElement('div');
+      links.className = 'game-links';
+
+      const playLink = document.createElement('a');
+      playLink.className = 'game-link primary';
+      playLink.href = `${hostedBaseUrl}/${encodeURIComponent(folderName)}/`;
+      playLink.target = '_blank';
+      playLink.rel = 'noopener noreferrer';
+      playLink.textContent = 'Open Game';
+
+      const sourceLink = document.createElement('a');
+      sourceLink.className = 'game-link';
+      sourceLink.href = `${repoBaseUrl}/tree/${branchName}/${encodeURIComponent(folderName)}`;
+      sourceLink.target = '_blank';
+      sourceLink.rel = 'noopener noreferrer';
+      sourceLink.textContent = 'View on GitHub';
+
+      links.appendChild(playLink);
+      links.appendChild(sourceLink);
+
+      card.appendChild(title);
+      card.appendChild(sourcePath);
+      card.appendChild(links);
+      return card;
+    };
+
+    const loadGamesForBranch = (branchName) => {
+      const contentsApiUrl = `https://api.github.com/repos/${owner}/${repo}/contents?ref=${branchName}`;
+      return fetch(contentsApiUrl)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`GitHub API request failed with ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((items) => ({ items, branchName }));
+    };
+
+    const tryLoad = async () => {
+      let result = null;
+
+      for (const branchName of branches) {
+        try {
+          result = await loadGamesForBranch(branchName);
+          break;
+        } catch (_error) {
+          // Try next branch fallback.
+        }
+      }
+
+      if (!result) {
+        throw new Error('Unable to load repository contents from known branches.');
+      }
+
+      const { items, branchName } = result;
+      const games = (items || [])
+        .filter((item) => item.type === 'dir')
+        .map((item) => item.name)
+        .filter((name) => !ignoredFolders.has(name.toLowerCase()))
+        .sort((a, b) => a.localeCompare(b));
+
+      if (!games.length) {
+        statusEl.textContent = `No game folders were found in ${owner}/${repo}@${branchName}.`;
+        return;
+      }
+
+      statusEl.textContent = `Loaded ${games.length} games from ${owner}/${repo}@${branchName}.`;
+
+      games.forEach((folderName) => {
+        gridEl.appendChild(createGameCard(folderName, branchName));
+      });
+    };
+
+    tryLoad().catch((error) => {
+      statusEl.textContent = 'Could not load games from GitHub. Please try again later.';
+      console.error(error);
+    });
+  </script>
+</body>
+</html>
