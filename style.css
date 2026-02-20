@@ -26,7 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 3rem;
+  padding: 1.35rem 3.2rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -39,8 +39,8 @@ body {
 }
 
 .logo {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   object-fit: contain;
   border-radius: 12px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 22px rgba(0, 0, 0, 0.45);
@@ -86,9 +86,18 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 100%;
   min-height: 100vh;
   padding-top: 80px;
   text-align: center;
+}
+
+.hero-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .standard-layout {
@@ -98,16 +107,18 @@ body {
 }
 
 .main-title {
+  width: 100%;
+  text-align: center;
   font-size: 4rem;
   font-weight: 700;
-  margin: 0.9rem 0 2rem;
+  margin: 0.9rem auto 2rem;
   text-shadow: 0 0 16px rgba(255, 255, 255, 0.16);
 }
 
 .search-wrapper {
-  width: 100%;
-  max-width: 600px;
-  padding: 0 20px;
+  width: min(600px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 0;
 }
 
 .blue-focus-input {
@@ -118,6 +129,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.28);
   background: rgba(255, 255, 255, 0.08);
   color: #ffffff;
+  text-align: center;
   outline: none;
   transition: all 0.25s ease;
 }
