@@ -20,7 +20,13 @@ body {
 body {
   font-family: 'Inter', sans-serif;
   color: var(--text-main);
-  background: radial-gradient(circle at 20% 0%, #1c2a47 0%, #0a111d 45%, #05070d 100%);
+  background-color: #03060d;
+  background-image:
+    radial-gradient(circle at 50% 72%, rgba(66, 120, 255, 0.34) 0%, rgba(24, 55, 132, 0.22) 26%, rgba(4, 8, 18, 0) 58%),
+    radial-gradient(circle at 50% 40%, rgba(59, 127, 255, 0.30) 0%, rgba(21, 46, 114, 0.18) 30%, rgba(4, 8, 18, 0) 62%),
+    radial-gradient(circle at 50% 50%, rgba(98, 164, 255, 0.20) 0%, rgba(8, 16, 36, 0) 48%),
+    radial-gradient(circle at 50% 50%, #0a1530 0%, #050a16 52%, #020409 100%);
+  background-repeat: no-repeat;
   overflow-x: hidden;
 }
 
