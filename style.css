@@ -26,12 +26,14 @@ body {
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.5rem;
-  position: sticky;
+  padding: 0.8rem 1.2rem;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 10;
   background: rgba(8, 14, 24, 0.92);
   backdrop-filter: blur(8px);
@@ -43,25 +45,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
+  width: 44px;
+  height: 44px;
+  margin-right: auto;
   border-radius: 10px;
-  border: 1px solid rgba(213, 219, 232, 0.32);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(213, 219, 232, 0.38);
+  background: rgba(13, 24, 39, 0.95);
   overflow: hidden;
 }
 
 .logo img {
-  width: 42px;
-  height: 42px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.35));
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .nav-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  margin-left: auto;
   gap: 0.6rem;
 }
 
@@ -94,9 +98,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 72px);
+  min-height: calc(100vh - 70px);
   text-align: center;
-  padding: 2rem 1.25rem 3rem;
+  padding: 5.5rem 1.25rem 3rem;
 }
 
 .main-title {
@@ -141,12 +145,15 @@ body {
 
 @media (max-width: 720px) {
   .navbar {
-    align-items: flex-start;
-    flex-direction: column;
+    padding: 0.75rem 0.9rem;
   }
 
   .nav-links {
-    width: 100%;
-    justify-content: flex-start;
+    gap: 0.45rem;
+  }
+
+  .nav-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.82rem;
   }
 }
