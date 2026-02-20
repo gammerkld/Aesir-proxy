@@ -2,9 +2,9 @@
 /* Change this ONE hex code to change the accent color everywhere */
 :root {
   --accent-blue: #3a86ff; /* A nice bright electric blue */
-  --bg-dark: #0d0d0d;
+  --bg-dark: #131722;
   --text-light: #ffffff;
-  --nav-bg: rgba(13, 13, 13, 0.8); /* Slightly transparent dark */
+  --nav-bg: rgba(15, 19, 28, 0.82); /* Slightly transparent dark */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   color: var(--text-light);
   height: 100vh;
   /* SPICE: A subtle dark-blue tint in the center glowing outwards */
-  background: radial-gradient(circle at center, #1a2238 0%, #000000 100%);
+  background: radial-gradient(circle at center, #20273a 0%, #11141c 100%);
 }
 
 /* --- NAVBAR --- */
@@ -35,16 +35,17 @@ body {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  /* Optional: Make logo hint blue */
-  /* color: var(--accent-blue); */
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 22px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .nav-links a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7); /* Start slightly dimmed */
+  color: rgba(255, 255, 255, 0.82);
   margin-left: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -53,8 +54,23 @@ body {
 
 /* SPICE: Hovering turns links blue and adds a subtle glow */
 .nav-links a:hover {
-  color: var(--accent-blue);
-  text-shadow: 0 0 8px rgba(58, 134, 255, 0.6);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: none;
+}
+
+.settings-btn {
+  background: var(--accent-blue);
+  color: #ffffff !important;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 8px 24px rgba(58, 134, 255, 0.45);
+}
+
+.settings-btn:hover {
+  color: #ffffff !important;
+  background: #2f74e8;
+  text-shadow: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2), 0 10px 26px rgba(47, 116, 232, 0.5);
 }
 
 /* Optional class for the page you are currently on */
@@ -88,9 +104,17 @@ body {
 .main-title {
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin: 0.9rem 0 2rem;
   /* SPICE: Subtle blue outer glow on main text */
-  text-shadow: 0 0 40px rgba(58, 134, 255, 0.2);
+  text-shadow: 0 0 24px rgba(58, 134, 255, 0.12);
+}
+
+.hero-logo-image {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  border-radius: 22px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
 }
 
 
@@ -106,8 +130,8 @@ body {
   padding: 18px 30px;
   font-size: 1.1rem;
   border-radius: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.09);
   color: white;
   outline: none; /* Removes ugly default browser outline */
   transition: all 0.3s ease;
@@ -116,9 +140,9 @@ body {
 /* SPICE: The biggest change - when clicked, it glows blue */
 .blue-focus-input:focus {
   border-color: var(--accent-blue);
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 25px rgba(58, 134, 255, 0.4); /* The blue glow */
-  transform: scale(1.02); /* Slight grow effect */
+  background: rgba(0, 0, 0, 0.28);
+  box-shadow: 0 0 12px rgba(58, 134, 255, 0.25);
+  transform: scale(1.01);
 }
 
 .blue-focus-input::placeholder {
