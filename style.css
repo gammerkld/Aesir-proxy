@@ -35,11 +35,12 @@ body {
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  /* Optional: Make logo hint blue */
-  /* color: var(--accent-blue); */
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 22px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .nav-links a {
