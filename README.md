@@ -1,5 +1,6 @@
  # Æsir Proxy
 Proxy being developed by Matt, Matthew, WWRYanni, and BOBO
+
 Our server: https://discord.gg/uhxG4U6AxM
 
 
