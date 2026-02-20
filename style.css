@@ -1,10 +1,13 @@
-/* --- GLOBAL VARIABLES --- */
-/* Change this ONE hex code to change the accent color everywhere */
+/* Monochrome theme: high header contrast with centered glow */
+html {
+  background-color: #060606;
+}
+
 :root {
-  --accent-blue: #3a86ff; /* A nice bright electric blue */
-  --bg-dark: #0d0d0d;
-  --text-light: #ffffff;
-  --nav-bg: rgba(13, 13, 13, 0.8); /* Slightly transparent dark */
+  --accent-blue: #d9d9d9;
+  --bg-dark: #060606;
+  --text-light: #f5f5f5;
+  --nav-bg: rgba(5, 5, 5, 0.97);
 }
 
 body {
@@ -12,12 +15,13 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-light);
-  height: 100vh;
-  /* SPICE: A subtle dark-blue tint in the center glowing outwards */
-  background: radial-gradient(circle at center, #1a2238 0%, #000000 100%);
+  min-height: 100vh;
+  background:
+    radial-gradient(52% 40% at 50% 58%, rgba(255, 255, 255, 0.22) 0%, rgba(145, 145, 145, 0.13) 40%, rgba(20, 20, 20, 0) 76%),
+    radial-gradient(30% 22% at 50% 52%, rgba(255, 255, 255, 0.14) 0%, rgba(130, 130, 130, 0.08) 48%, rgba(18, 18, 18, 0) 82%),
+    linear-gradient(180deg, #040404 0%, #090909 52%, #0f0f0f 100%);
 }
 
-/* --- NAVBAR --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,76 +33,81 @@ body {
   z-index: 100;
   box-sizing: border-box;
   background: var(--nav-bg);
-  /* Glass effect */
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 2px;
-  /* Optional: Make logo hint blue */
-  /* color: var(--accent-blue); */
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 22px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .nav-links a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.7); /* Start slightly dimmed */
+  color: rgba(255, 255, 255, 0.84);
   margin-left: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
 }
 
-/* SPICE: Hovering turns links blue and adds a subtle glow */
 .nav-links a:hover {
-  color: var(--accent-blue);
-  text-shadow: 0 0 8px rgba(58, 134, 255, 0.6);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Optional class for the page you are currently on */
+.settings-btn {
+  background: linear-gradient(180deg, #252525 0%, #111111 100%);
+  color: #f8f8f8 !important;
+  padding: 0.5rem 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.settings-btn:hover {
+  color: #ffffff !important;
+  background: linear-gradient(180deg, #303030 0%, #161616 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 10px 24px rgba(0, 0, 0, 0.5);
+}
+
 .nav-links a.active {
-    color: var(--accent-blue);
-    font-weight: 700;
+  color: #ffffff;
+  font-weight: 700;
 }
 
-
-/* --- LAYOUT UTILITIES --- */
-/* Use this class on the <main> tag for centered content pages like Home */
 .centered-layout {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Ensure it takes full height */
-  padding-top: 80px; /* Account for fixed navbar */
+  min-height: 100vh;
+  padding-top: 80px;
   text-align: center;
 }
 
-/* Use this class for standard content pages (like an "About" page) */
 .standard-layout {
-    padding: 120px 10% 50px 10%; /* Top padding clears navbar */
-    max-width: 1200px;
-    margin: 0 auto;
+  padding: 120px 10% 50px 10%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-
-/* --- HERO CONTENT --- */
 .main-title {
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 2rem;
-  /* SPICE: Subtle blue outer glow on main text */
-  text-shadow: 0 0 40px rgba(58, 134, 255, 0.2);
+  margin: 0.9rem 0 2rem;
+  text-shadow: 0 0 16px rgba(255, 255, 255, 0.16);
 }
 
-
-/* --- INPUT FIELDS --- */
 .search-wrapper {
-    width: 100%;
-    max-width: 600px;
-    padding: 0 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 20px;
 }
 
 .blue-focus-input {
@@ -106,21 +115,20 @@ body {
   padding: 18px 30px;
   font-size: 1.1rem;
   border-radius: 50px;
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  outline: none; /* Removes ugly default browser outline */
-  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  outline: none;
+  transition: all 0.25s ease;
 }
 
-/* SPICE: The biggest change - when clicked, it glows blue */
 .blue-focus-input:focus {
-  border-color: var(--accent-blue);
-  background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 25px rgba(58, 134, 255, 0.4); /* The blue glow */
-  transform: scale(1.02); /* Slight grow effect */
+  border-color: rgba(255, 255, 255, 0.75);
+  background: rgba(20, 20, 20, 0.85);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
+  transform: scale(1.01);
 }
 
 .blue-focus-input::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.45);
 }
