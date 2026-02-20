@@ -13,8 +13,13 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-light);
   height: 100vh;
-  /* SPICE: A subtle dark-blue tint in the center glowing outwards */
-  background: radial-gradient(circle at center, #252d43 0%, #0d1119 100%);
+  /* Blue aurora-style glow background (no stars), inspired by the reference */
+  background:
+    radial-gradient(45% 35% at 50% 72%, rgba(61, 139, 255, 0.45) 0%, rgba(24, 74, 158, 0.22) 45%, rgba(10, 20, 40, 0) 78%),
+    radial-gradient(34% 28% at 62% 60%, rgba(46, 112, 255, 0.32) 0%, rgba(17, 56, 130, 0.12) 52%, rgba(10, 20, 40, 0) 80%),
+    radial-gradient(32% 26% at 39% 62%, rgba(72, 154, 255, 0.3) 0%, rgba(25, 72, 156, 0.12) 50%, rgba(10, 20, 40, 0) 82%),
+    radial-gradient(18% 16% at 52% 41%, rgba(97, 179, 255, 0.28) 0%, rgba(31, 94, 195, 0.08) 56%, rgba(10, 20, 40, 0) 84%),
+    linear-gradient(180deg, #05070d 0%, #070d18 48%, #0b1321 100%);
 }
 
 /* --- NAVBAR --- */
