@@ -1,5 +1,5 @@
-# Æsir Proxy
-Proxy being developed by Matt, Matthew, WWRYanni,BOBO
+ # Æsir Proxy
+Proxy being developed by Matt, Matthew, WWRYanni, and BOBO
 
 
 
