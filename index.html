@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+@@ -5,27 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Æsir Proxy</title>
   <link rel="stylesheet" href="style.css">
@@ -26,6 +23,37 @@
       <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
     </div>
   </main>
+
+  <script>
+    function inFrame() {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
+    }
+
+    const beforeUnloadHandler = function (e) {
+      e.preventDefault();
+      e.returnValue = 'Are you sure you want to leave?';
+    };
+
+    function addBeforeUnloadProtection() {
+      window.addEventListener('beforeunload', beforeUnloadHandler);
+
+      if (inFrame() !== false) {
+        try {
+          if (window.top && window.top !== window) {
+            window.top.addEventListener('beforeunload', beforeUnloadHandler);
+          }
+        } catch (e) {
+          // Ignore cross-origin frame access errors and keep local protection active.
+        }
+      }
+    }
+
+    addBeforeUnloadProtection();
+  </script>
 
 </body>
 </html>
