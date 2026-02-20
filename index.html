@@ -1,24 +1,27 @@
-@@ -5,27 +5,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Æsir Proxy</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="logo">Æ</div>
-    <div class="nav-links">
-      <a href="#">Games</a>
-      <a href="#">Apps</a>
-      <a href="#">Roblox</a>
-      <a href="#">Tomodachi Life</a>
-      <a href="#" class="settings-btn">Settings</a>
+  <nav class="navbar" aria-label="Primary navigation">
+    <div class="logo">Æsir</div>
+    <div class="nav-links" role="group" aria-label="Quick links">
+      <button type="button" class="nav-btn">Games</button>
+      <button type="button" class="nav-btn">Apps</button>
+      <button type="button" class="nav-btn">Roblox</button>
+      <button type="button" class="nav-btn">Tomodachi Life</button>
+      <button type="button" class="nav-btn settings-btn">Settings</button>
     </div>
   </nav>
 
   <main class="hero-section centered-layout">
     <h1 class="main-title">Æsir Proxy</h1>
+    <p class="subtitle">Launch apps and games fast with a cleaner, higher-contrast interface.</p>
     <div class="search-wrapper">
       <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
     </div>
@@ -54,6 +57,5 @@
 
     addBeforeUnloadProtection();
   </script>
-
 </body>
 </html>
