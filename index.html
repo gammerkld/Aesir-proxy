@@ -21,11 +21,47 @@
   </nav>
 
   <main class="hero-section centered-layout">
+    <img
+      class="hero-logo-image"
+      src="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78"
+      alt="Æsir logo"
+    >
     <h1 class="main-title">Æsir Proxy</h1>
     <div class="search-wrapper">
       <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
     </div>
   </main>
+
+  <script>
+    function inFrame() {
+      try {
+        return window.self !== window.top;
+      } catch (e) {
+        return true;
+      }
+    }
+
+    const beforeUnloadHandler = function (e) {
+      e.preventDefault();
+      e.returnValue = 'Are you sure you want to leave?';
+    };
+
+    function addBeforeUnloadProtection() {
+      window.addEventListener('beforeunload', beforeUnloadHandler);
+
+      if (inFrame() !== false) {
+        try {
+          if (window.top && window.top !== window) {
+            window.top.addEventListener('beforeunload', beforeUnloadHandler);
+          }
+        } catch (e) {
+          // Ignore cross-origin frame access errors and keep local protection active.
+        }
+      }
+    }
+
+    addBeforeUnloadProtection();
+  </script>
 
 </body>
 </html>
