@@ -1,10 +1,14 @@
+html {
+  background-color: #0a0f1a;
+}
+
 /* --- GLOBAL VARIABLES --- */
 /* Change this ONE hex code to change the accent color everywhere */
 :root {
   --accent-blue: #3a86ff; /* A nice bright electric blue */
-  --bg-dark: #10141f;
+  --bg-dark: #0a0f1a;
   --text-light: #ffffff;
-  --nav-bg: rgba(10, 13, 20, 0.9); /* Slightly darker top bar */
+  --nav-bg: rgba(7, 10, 16, 0.92); /* Darker top bar */
 }
 
 body {
@@ -12,14 +16,14 @@ body {
   font-family: 'Inter', sans-serif;
   background-color: var(--bg-dark);
   color: var(--text-light);
-  height: 100vh;
-  /* Blue aurora-style glow background (no stars), inspired by the reference */
+  min-height: 100vh;
+  /* Darker blue aurora glow background (no stars) */
   background:
-    radial-gradient(45% 35% at 50% 72%, rgba(61, 139, 255, 0.45) 0%, rgba(24, 74, 158, 0.22) 45%, rgba(10, 20, 40, 0) 78%),
-    radial-gradient(34% 28% at 62% 60%, rgba(46, 112, 255, 0.32) 0%, rgba(17, 56, 130, 0.12) 52%, rgba(10, 20, 40, 0) 80%),
-    radial-gradient(32% 26% at 39% 62%, rgba(72, 154, 255, 0.3) 0%, rgba(25, 72, 156, 0.12) 50%, rgba(10, 20, 40, 0) 82%),
-    radial-gradient(18% 16% at 52% 41%, rgba(97, 179, 255, 0.28) 0%, rgba(31, 94, 195, 0.08) 56%, rgba(10, 20, 40, 0) 84%),
-    linear-gradient(180deg, #05070d 0%, #070d18 48%, #0b1321 100%);
+    radial-gradient(48% 37% at 50% 73%, rgba(48, 110, 214, 0.34) 0%, rgba(19, 55, 122, 0.2) 44%, rgba(8, 16, 34, 0) 78%),
+    radial-gradient(34% 28% at 64% 61%, rgba(36, 88, 201, 0.26) 0%, rgba(14, 42, 98, 0.14) 52%, rgba(8, 16, 34, 0) 80%),
+    radial-gradient(34% 28% at 36% 63%, rgba(54, 122, 224, 0.24) 0%, rgba(18, 50, 108, 0.13) 52%, rgba(8, 16, 34, 0) 82%),
+    radial-gradient(20% 18% at 52% 42%, rgba(78, 150, 235, 0.2) 0%, rgba(25, 71, 149, 0.08) 58%, rgba(8, 16, 34, 0) 84%),
+    linear-gradient(180deg, #060912 0%, #091121 52%, #0d1830 100%);
 }
 
 /* --- NAVBAR --- */
@@ -50,7 +54,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.84);
   margin-left: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
@@ -129,7 +133,7 @@ body {
   font-size: 1.1rem;
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
   color: white;
   outline: none; /* Removes ugly default browser outline */
   transition: all 0.3s ease;
