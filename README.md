@@ -1,6 +1,5 @@
  # Æsir Proxy
-Proxy being developed by Matt, Matthew, WWRYanni, and BOBO
-
+ 
 Our server: https://discord.gg/uhxG4U6AxM
 
 
@@ -12,7 +11,7 @@ The Developers
 The Users
 𝐔𝐬𝐞𝐫𝐬 𝐚𝐫𝐞 𝐚𝐧 𝐞𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥 𝐩𝐚𝐫𝐭 𝐨𝐟 𝐚𝐧𝐲 𝐨𝐧𝐥𝐢𝐧𝐞 𝐩𝐥𝐚𝐭𝐟𝐨𝐫𝐦. 𝐓𝐡𝐞𝐲 𝐢𝐧𝐭𝐞𝐫𝐚𝐜𝐭 𝐰𝐢𝐭𝐡 𝐜𝐨𝐧𝐭𝐞𝐧𝐭, 𝐭𝐞𝐬𝐭 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐯𝐚𝐥𝐮𝐚𝐛𝐥𝐞 𝐟𝐞𝐞𝐝𝐛𝐚𝐜𝐤. 𝐓𝐡𝐞𝐢𝐫 𝐢𝐧𝐩𝐮𝐭 𝐡𝐞𝐥𝐩𝐬 𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 𝐫𝐞𝐟𝐢𝐧𝐞 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐢𝐦𝐩𝐫𝐨𝐯𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞, 𝐚𝐧𝐝 𝐜𝐫𝐞𝐚𝐭𝐞 𝐚 𝐛𝐞𝐭𝐭𝐞𝐫 𝐨𝐯𝐞𝐫𝐚𝐥𝐥 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞. 𝐀𝐜𝐭𝐢𝐯𝐞 𝐮𝐬𝐞𝐫𝐬 𝐜𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐠𝐫𝐨𝐰𝐭𝐡 𝐚𝐧𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬 𝐨𝐟 𝐚 𝐩𝐫𝐨𝐣𝐞𝐜𝐭.
 
--Æsir-Proxy Community Management
+-Æsir-Proxy Community Management, And a Thanks to the Developers who made this happen, Gammarkid, WWWRYanni also known as reaperrustlol on dc
 
 
 <img width="300" height="300" alt="asier" src="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78" />
