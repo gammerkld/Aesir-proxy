@@ -78,6 +78,7 @@ body {
 .nav-links a.active {
   color: #ffffff;
   font-weight: 700;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
 .centered-layout {
@@ -142,4 +143,41 @@ body {
 
 .blue-focus-input::placeholder {
   color: rgba(255, 255, 255, 0.45);
+}
+
+.game-shell {
+  min-height: 100vh;
+  padding: 106px 20px 20px;
+}
+
+.game-shell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 16px;
+}
+
+.game-shell-header h2 {
+  margin: 0;
+}
+
+.game-shell-header button {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #ffffff;
+  background: #161616;
+  cursor: pointer;
+}
+
+#tomodachi-frame {
+  width: min(1200px, 100%);
+  height: calc(100vh - 180px);
+  margin: 0 auto;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  background: #000000;
 }
