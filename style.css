@@ -113,7 +113,9 @@ body {
   font-size: 1.1rem;
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  background: #000000;
+  background:
+    radial-gradient(62% 180% at 50% 50%, rgba(110, 110, 110, 0.34) 0%, rgba(68, 68, 68, 0.2) 32%, rgba(24, 24, 24, 0.9) 68%, rgba(0, 0, 0, 1) 100%),
+    linear-gradient(180deg, #090909 0%, #000000 100%);
   color: #ffffff;
   text-align: center;
   outline: none;
