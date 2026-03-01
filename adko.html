@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Æsir Proxy</title>
+  <title>Tomodachi Collection | Æsir Proxy</title>
   <link rel="icon" type="image/png" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
   <link rel="apple-touch-icon" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
   <link rel="stylesheet" href="style.css">
@@ -19,17 +19,24 @@
       <a href="#">Games</a>
       <a href="#">Apps</a>
       <a href="#">Roblox</a>
-      <a href="adko.html">Tomodachi Collection</a>
+      <a href="adko.html" class="active">Tomodachi Collection</a>
       <a href="#">Settings</a>
     </div>
   </nav>
 
-  <main class="hero-section centered-layout" id="home-screen">
-    <h1 class="main-title">Æsir Proxy</h1>
-    <div class="search-wrapper">
-      <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
+  <section class="game-shell">
+    <div class="game-shell-header">
+      <h2>Tomodachi Collection</h2>
     </div>
-  </main>
+    <iframe
+      id="tomodachi-frame"
+      title="Tomodachi Collection"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer"
+      src="games/tomodachi/index.html"
+    ></iframe>
+  </section>
 
   <script>
     function inFrame() {
