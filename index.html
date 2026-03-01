@@ -17,17 +17,31 @@
       <a href="#">Games</a>
       <a href="#">Apps</a>
       <a href="#">Roblox</a>
-      <a href="#">Tomodachi Life</a>
+      <a href="#" id="tomodachi-button" data-game-url="games/tomodachi/index.html">Tomodachi Collection</a>
       <a href="#" class="settings-btn">Settings</a>
     </div>
   </nav>
 
-  <main class="hero-section centered-layout">
+  <main class="hero-section centered-layout" id="home-screen">
     <h1 class="main-title">Æsir Proxy</h1>
     <div class="search-wrapper">
       <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
     </div>
   </main>
+
+  <section class="game-shell" id="game-shell" hidden>
+    <div class="game-shell-header">
+      <h2>Tomodachi Collection</h2>
+      <button id="close-game" type="button">Close game</button>
+    </div>
+    <iframe
+      id="tomodachi-frame"
+      title="Tomodachi Collection"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer"
+    ></iframe>
+  </section>
 
   <script>
     function inFrame() {
@@ -57,7 +71,46 @@
       }
     }
 
+    function setupTomodachiLauncher() {
+      const launchButton = document.getElementById('tomodachi-button');
+      const gameShell = document.getElementById('game-shell');
+      const homeScreen = document.getElementById('home-screen');
+      const closeButton = document.getElementById('close-game');
+      const gameFrame = document.getElementById('tomodachi-frame');
+
+      if (!launchButton || !gameShell || !homeScreen || !closeButton || !gameFrame) {
+        return;
+      }
+
+      const gameUrl = launchButton.dataset.gameUrl;
+
+      launchButton.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (!gameUrl) {
+          alert('Missing game URL. Add data-game-url to the Tomodachi button.');
+          return;
+        }
+
+        launchButton.classList.add('active');
+        homeScreen.hidden = true;
+        gameShell.hidden = false;
+
+        if (gameFrame.src !== new URL(gameUrl, window.location.href).href) {
+          gameFrame.src = gameUrl;
+        }
+      });
+
+      closeButton.addEventListener('click', function () {
+        launchButton.classList.remove('active');
+        gameShell.hidden = true;
+        homeScreen.hidden = false;
+        gameFrame.removeAttribute('src');
+      });
+    }
+
     addBeforeUnloadProtection();
+    setupTomodachiLauncher();
   </script>
 
 </body>
