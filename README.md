@@ -1,17 +1,22 @@
- # Æsir Proxy
- 
+# Æsir Proxy
+Proxy being developed by Matt, Matthew, WWRYanni, and BOBO
+
 Our server: https://discord.gg/uhxG4U6AxM
 
+## Tomodachi Collection (EmulatorJS) setup
 
+If you exported a zip from the EmulatorJS code generator (for example `OUT-BIOSGBA.zip`), wire it up like this:
 
-What's this about?
-𝐒𝐜𝐡𝐨𝐨𝐥𝐬 𝐮𝐬𝐞 𝐟𝐢𝐫𝐞𝐰𝐚𝐥𝐥𝐬 𝐚𝐧𝐝 𝐜𝐨𝐧𝐭𝐞𝐧𝐭 𝐟𝐢𝐥𝐭𝐞𝐫𝐬 𝐭𝐨 𝐦𝐚𝐢𝐧𝐭𝐚𝐢𝐧 𝐚 𝐬𝐚𝐟𝐞 𝐚𝐧𝐝 𝐟𝐨𝐜𝐮𝐬𝐞𝐝 𝐥𝐞𝐚𝐫𝐧𝐢𝐧𝐠 𝐞𝐧𝐯𝐢𝐫𝐨𝐧𝐦𝐞𝐧𝐭. 𝐂𝐲𝐛𝐞𝐫𝐬𝐞𝐜𝐮𝐫𝐢𝐭𝐲 𝐩𝐫𝐨𝐟𝐞𝐬𝐬𝐢𝐨𝐧𝐚𝐥𝐬 𝐝𝐞𝐬𝐢𝐠𝐧 𝐬𝐲𝐬𝐭𝐞𝐦𝐬 𝐭𝐨 𝐩𝐫𝐨𝐭𝐞𝐜𝐭 𝐧𝐞𝐭𝐰𝐨𝐫𝐤𝐬 𝐚𝐧𝐝 𝐦𝐚𝐧𝐚𝐠𝐞 𝐚𝐜𝐜𝐞𝐬𝐬 𝐫𝐞𝐬𝐩𝐨𝐧𝐬𝐢𝐛𝐥𝐲. 𝐈𝐧𝐝𝐞𝐩𝐞𝐧𝐝𝐞𝐧𝐭 𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 𝐜𝐫𝐞𝐚𝐭𝐞 𝐠𝐚𝐦𝐞𝐬 𝐚𝐧𝐝 𝐰𝐞𝐛𝐬𝐢𝐭𝐞𝐬 𝐚𝐧𝐝 𝐫𝐞𝐥𝐞𝐚𝐬𝐞 𝐮𝐩𝐝𝐚𝐭𝐞𝐝 𝐯𝐞𝐫𝐬𝐢𝐨𝐧𝐬 𝐥𝐢𝐤𝐞 “𝐯2” 𝐨𝐫 “𝐋𝐢𝐭𝐞” 𝐭𝐨 𝐢𝐦𝐩𝐫𝐨𝐯𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞 𝐚𝐧𝐝 𝐚𝐝𝐝 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬.
-The Developers
-𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 𝐚𝐫𝐞 𝐭𝐡𝐞 𝐜𝐫𝐞𝐚𝐭𝐢𝐯𝐞 𝐦𝐢𝐧𝐝𝐬 𝐛𝐞𝐡𝐢𝐧𝐝 𝐰𝐞𝐛𝐬𝐢𝐭𝐞𝐬 𝐚𝐧𝐝 𝐨𝐧𝐥𝐢𝐧𝐞 𝐩𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐬. 𝐓𝐡𝐞𝐲 𝐝𝐞𝐬𝐢𝐠𝐧, 𝐛𝐮𝐢𝐥𝐝, 𝐚𝐧𝐝 𝐦𝐚𝐢𝐧𝐭𝐚𝐢𝐧 𝐬𝐢𝐭𝐞𝐬 𝐮𝐬𝐢𝐧𝐠 𝐩𝐫𝐨𝐠𝐫𝐚𝐦𝐦𝐢𝐧𝐠 𝐥𝐚𝐧𝐠𝐮𝐚𝐠𝐞𝐬 𝐥𝐢𝐤𝐞 𝐇𝐓𝐌𝐋, 𝐂𝐒𝐒, 𝐚𝐧𝐝 𝐉𝐚𝐯𝐚𝐒𝐜𝐫𝐢𝐩𝐭. 𝐓𝐡𝐞𝐢𝐫 𝐰𝐨𝐫𝐤 𝐢𝐧𝐜𝐥𝐮𝐝𝐞𝐬 𝐢𝐦𝐩𝐫𝐨𝐯𝐢𝐧𝐠 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞, 𝐟𝐢𝐱𝐢𝐧𝐠 𝐛𝐮𝐠𝐬, 𝐭𝐞𝐬𝐭𝐢𝐧𝐠 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐫𝐞𝐥𝐞𝐚𝐬𝐢𝐧𝐠 𝐮𝐩𝐝𝐚𝐭𝐞𝐝 𝐯𝐞𝐫𝐬𝐢𝐨𝐧𝐬 𝐬𝐮𝐜𝐡 𝐚𝐬 “𝐯2” 𝐨𝐫 “𝐋𝐢𝐭𝐞” 𝐭𝐨 𝐞𝐧𝐡𝐚𝐧𝐜𝐞 𝐮𝐬𝐞𝐫 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞.
-The Users
-𝐔𝐬𝐞𝐫𝐬 𝐚𝐫𝐞 𝐚𝐧 𝐞𝐬𝐬𝐞𝐧𝐭𝐢𝐚𝐥 𝐩𝐚𝐫𝐭 𝐨𝐟 𝐚𝐧𝐲 𝐨𝐧𝐥𝐢𝐧𝐞 𝐩𝐥𝐚𝐭𝐟𝐨𝐫𝐦. 𝐓𝐡𝐞𝐲 𝐢𝐧𝐭𝐞𝐫𝐚𝐜𝐭 𝐰𝐢𝐭𝐡 𝐜𝐨𝐧𝐭𝐞𝐧𝐭, 𝐭𝐞𝐬𝐭 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐚𝐧𝐝 𝐩𝐫𝐨𝐯𝐢𝐝𝐞 𝐯𝐚𝐥𝐮𝐚𝐛𝐥𝐞 𝐟𝐞𝐞𝐝𝐛𝐚𝐜𝐤. 𝐓𝐡𝐞𝐢𝐫 𝐢𝐧𝐩𝐮𝐭 𝐡𝐞𝐥𝐩𝐬 𝐝𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫𝐬 𝐫𝐞𝐟𝐢𝐧𝐞 𝐟𝐞𝐚𝐭𝐮𝐫𝐞𝐬, 𝐢𝐦𝐩𝐫𝐨𝐯𝐞 𝐩𝐞𝐫𝐟𝐨𝐫𝐦𝐚𝐧𝐜𝐞, 𝐚𝐧𝐝 𝐜𝐫𝐞𝐚𝐭𝐞 𝐚 𝐛𝐞𝐭𝐭𝐞𝐫 𝐨𝐯𝐞𝐫𝐚𝐥𝐥 𝐞𝐱𝐩𝐞𝐫𝐢𝐞𝐧𝐜𝐞. 𝐀𝐜𝐭𝐢𝐯𝐞 𝐮𝐬𝐞𝐫𝐬 𝐜𝐨𝐧𝐭𝐫𝐢𝐛𝐮𝐭𝐞 𝐭𝐨 𝐭𝐡𝐞 𝐠𝐫𝐨𝐰𝐭𝐡 𝐚𝐧𝐝 𝐬𝐮𝐜𝐜𝐞𝐬𝐬 𝐨𝐟 𝐚 𝐩𝐫𝐨𝐣𝐞𝐜𝐭.
+1. Unzip the file.
+2. Copy the extracted output into `games/tomodachi/` in this repo.
+3. Commit and push those game files so GitHub Pages can serve them.
+4. The homepage launch link should point to `adko.html`:
+   ```html
+   <a href="adko.html">Tomodachi Collection</a>
+   ```
+5. `adko.html` embeds the emulator at `games/tomodachi/index.html`.
+6. To return home, click the logo in the top-left corner.
 
--Æsir-Proxy Community Management, And a Thanks to the Developers who made this happen, Gammarkid, WWWRYanni also known as reaperrustlol on dc
-
+If your generated folder has a different entry file name, update the iframe `src` in `adko.html`.
 
 <img width="300" height="300" alt="asier" src="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78" />
