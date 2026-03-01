@@ -3,6 +3,7 @@
 Our server: https://discord.gg/uhxG4U6AxM
 
 A proxy designed to tailor to the needs of our school, while not running any ads and with the capability of playing the games we want. 
+
 -Æsir-Proxy Community Management, and a thanks to the developers who made this happen, Matt, WWWRYanni (@reaperrustlol on dc), and BoBo
 
 
