@@ -60,24 +60,11 @@ body {
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
-.settings-btn {
-  background: linear-gradient(180deg, #252525 0%, #111111 100%);
-  color: #f8f8f8 !important;
-  padding: 0.5rem 0.95rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05), 0 8px 24px rgba(0, 0, 0, 0.45);
-}
-
-.settings-btn:hover {
-  color: #ffffff !important;
-  background: linear-gradient(180deg, #303030 0%, #161616 100%);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08), 0 10px 24px rgba(0, 0, 0, 0.5);
-}
 
 .nav-links a.active {
   color: #ffffff;
   font-weight: 700;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.35);
 }
 
 .centered-layout {
@@ -126,7 +113,7 @@ body {
   font-size: 1.1rem;
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.08);
+  background: #000000;
   color: #ffffff;
   text-align: center;
   outline: none;
@@ -134,12 +121,40 @@ body {
 }
 
 .blue-focus-input:focus {
-  border-color: rgba(255, 255, 255, 0.75);
-  background: rgba(20, 20, 20, 0.85);
+  border-color: rgba(255, 255, 255, 0.55);
+  background: #5b5b5b;
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.18);
   transform: scale(1.01);
 }
 
 .blue-focus-input::placeholder {
   color: rgba(255, 255, 255, 0.45);
+}
+
+.game-shell {
+  min-height: 100vh;
+  padding: 106px 20px 20px;
+}
+
+.game-shell-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 16px;
+}
+
+.game-shell-header h2 {
+  margin: 0;
+}
+
+#tomodachi-frame {
+  width: min(1200px, 100%);
+  height: calc(100vh - 180px);
+  margin: 0 auto;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 12px;
+  background: #000000;
 }
