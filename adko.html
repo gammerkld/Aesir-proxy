@@ -29,14 +29,14 @@
       <h2>Tomodachi Collection</h2>
     </div>
     <iframe
-<iframe
-  id="tomodachi-frame"
-  title="Tomodachi Collection"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer"
-  src="./tomodachi/index.html"
-></iframe>
+      id="tomodachi-frame"
+      title="Tomodachi Collection"
+      loading="lazy"
+      allowfullscreen
+      referrerpolicy="no-referrer"
+      src="/games/tomodachi/index.html"
+    ></iframe>
+
   </section>
 
   <script>
@@ -62,7 +62,7 @@
             window.top.addEventListener('beforeunload', beforeUnloadHandler);
           }
         } catch (e) {
-
+          // Ignore cross-origin frame access errors and keep local protection active.
         }
       }
     }
