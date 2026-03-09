@@ -1,5 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- Soobin Easter Egg Video -->
+<div id="soobinOverlay" style="
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  justify-content:center;
+  align-items:center;
+  z-index:10000;
+">
+  <video id="soobinVideo" src="extra/google.mp4" style="max-width:80%; max-height:80%;" controls muted></video>
+</div>
+
+<script>
+let typed = '';
+const keyword = 'soobin';
+const overlay = document.getElementById('soobinOverlay');
+const video = document.getElementById('soobinVideo');
+
+document.addEventListener('keydown', (e) => {
+  typed += e.key.toLowerCase();
+
+  if (typed.length > keyword.length) {
+    typed = typed.slice(typed.length - keyword.length);
+  }
+
+  if (typed === keyword) {
+    overlay.style.display = 'flex';
+    video.currentTime = 0; // restart video
+    video.muted = true;    // mute for autoplay
+
+    // Try to play, then unmute after it starts
+    video.play().then(() => {
+      video.muted = false;
+    }).catch(err => {
+      console.log("Playback blocked:", err);
+    });
+  }
+});
+
+// Close overlay on clicking background
+overlay.addEventListener('click', (e) => {
+  if (e.target === overlay) {
+    overlay.style.display = 'none';
+    video.pause();
+  }
+});
+
+// Close overlay on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && overlay.style.display === 'flex') {
+    overlay.style.display = 'none';
+    video.pause();
+  }
+});
+</script>
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,6 +122,27 @@
 
     addBeforeUnloadProtection();
   </script>
+
+
+<script>
+let typed = "";
+
+document.addEventListener("keydown", function(e) {
+  typed += e.key.toLowerCase();
+
+  if (typed.includes("soobin")) {
+    const video = document.getElementById("soobinVideo");
+    video.style.display = "block";
+    video.currentTime = 0;
+    video.play().catch(() => {});
+    typed = "";
+  }
+
+  if (typed.length > 20) {
+    typed = typed.slice(-20);
+  }
+});
+</script>
 
 
 
