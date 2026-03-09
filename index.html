@@ -62,6 +62,29 @@
     addBeforeUnloadProtection();
   </script>
 
+  <video id="soobinVideo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999;" controls>
+  <source src="extra/google.mp4" type="video/mp4">
+</video>
+
+<script>
+let typed = "";
+
+document.addEventListener("keydown", function(e) {
+  typed += e.key.toLowerCase();
+
+  if (typed.includes("soobin")) {
+    const video = document.getElementById("soobinVideo");
+    video.style.display = "block";
+    video.play();
+    typed = "";
+  }
+
+  if (typed.length > 20) {
+    typed = typed.slice(-20);
+  }
+});
+</script>
+
 
 
 </body>
