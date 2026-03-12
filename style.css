@@ -57,7 +57,7 @@ body.home-page {
   width: 52px;
   height: 52px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 22px rgba(0, 0, 0, 0.45);
   background: rgba(255, 255, 255, 0.03);
 }
@@ -146,8 +146,8 @@ body.home-page {
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background:
-    radial-gradient(72% 170% at 50% 40%, rgba(36, 36, 36, 0.35) 0%, rgba(16, 16, 16, 0.55) 36%, rgba(6, 6, 6, 0.9) 72%, rgba(0, 0, 0, 1) 100%),
-    linear-gradient(180deg, #0a0a0a 0%, #050505 50%, #000000 100%);
+    radial-gradient(62% 180% at 50% 50%, rgba(55, 55, 55, 0.26) 0%, rgba(28, 28, 28, 0.46) 34%, rgba(10, 10, 10, 0.96) 70%, rgba(0, 0, 0, 1) 100%),
+    linear-gradient(180deg, #050505 0%, #000000 100%);
   color: #ffffff;
   text-align: center;
   outline: none;
