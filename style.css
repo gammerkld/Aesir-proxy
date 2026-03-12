@@ -24,6 +24,18 @@ body {
     linear-gradient(180deg, #040404 0%, #090909 52%, #0f0f0f 100%);
 }
 
+html.home-page,
+body.home-page {
+  height: 100%;
+  overflow: hidden;
+}
+
+body.home-page {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -52,6 +64,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
+  font-family: 'Cinzel', serif;
   color: rgba(255, 255, 255, 0.84);
   margin-left: 2rem;
   font-size: 0.9rem;
@@ -133,8 +146,8 @@ body {
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.28);
   background:
-    radial-gradient(62% 180% at 50% 50%, rgba(110, 110, 110, 0.34) 0%, rgba(68, 68, 68, 0.2) 32%, rgba(24, 24, 24, 0.9) 68%, rgba(0, 0, 0, 1) 100%),
-    linear-gradient(180deg, #090909 0%, #000000 100%);
+    radial-gradient(62% 180% at 50% 50%, rgba(55, 55, 55, 0.26) 0%, rgba(28, 28, 28, 0.46) 34%, rgba(10, 10, 10, 0.96) 70%, rgba(0, 0, 0, 1) 100%),
+    linear-gradient(180deg, #050505 0%, #000000 100%);
   color: #ffffff;
   text-align: center;
   outline: none;
