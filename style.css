@@ -57,7 +57,7 @@ body.home-page {
   width: 52px;
   height: 52px;
   object-fit: contain;
-  border-radius: 12px;
+  border-radius: 0.01px;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 22px rgba(0, 0, 0, 0.45);
   background: rgba(255, 255, 255, 0.03);
 }
