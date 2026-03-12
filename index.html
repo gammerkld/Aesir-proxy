@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="home-page">
   <link rel="icon" type="image/png" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
   <link rel="apple-touch-icon" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 
 <!-- Soobin Easter Egg Video -->
 <div id="soobinOverlay" style="
@@ -72,9 +72,9 @@ document.addEventListener('keydown', (e) => {
   <link rel="icon" type="image/png" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
   <link rel="apple-touch-icon" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-page">
 
   <nav class="navbar">
     <a href="index.html" aria-label="Go to home page">
@@ -90,6 +90,7 @@ document.addEventListener('keydown', (e) => {
   </nav>
 
   <main class="hero-section centered-layout" id="home-screen">
+    <div id="vanta-waves"></div>
     <h1 class="main-title">Æsir Proxy</h1>
     <div class="search-wrapper">
       <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
@@ -125,6 +126,22 @@ document.addEventListener('keydown', (e) => {
     }
 
     addBeforeUnloadProtection();
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+  <script>
+    VANTA.WAVES({
+      el: '#vanta-waves',
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x20202
+    });
   </script>
 
 
