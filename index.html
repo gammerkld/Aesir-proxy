@@ -92,9 +92,14 @@ document.addEventListener('keydown', (e) => {
   <main class="hero-section centered-layout" id="home-screen">
     <div id="vanta-waves"></div>
     <h1 class="main-title">Æsir Proxy</h1>
-    <div class="search-wrapper">
-      <input type="text" class="blue-focus-input" placeholder="Search with Google or enter address">
-    </div>
+    <form class="search-wrapper" id="home-address-form" autocomplete="off">
+      <input
+        id="home-address-input"
+        type="text"
+        class="blue-focus-input"
+        placeholder="Search with Google or enter address"
+      >
+    </form>
   </main>
 
   <script>
@@ -165,6 +170,7 @@ document.addEventListener("keydown", function(e) {
 });
 </script>
 
+<script src="app.js"></script>
 
 
 </body>
