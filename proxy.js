@@ -2,22 +2,49 @@
   const form = document.getElementById('proxy-address-form');
   const input = document.getElementById('proxy-address-input');
   const status = document.getElementById('proxy-status');
-  if (!form || !input || !status) return;
+  const frame = document.getElementById('proxy-frame');
+  if (!form || !input || !status || !frame) return;
+  let statusTimer;
 
-  const openInProxy = (rawValue) => {
-    const destination = window.AesirScramjet?.normalizeInput(rawValue) ?? '';
-    if (!destination) {
-      status.textContent = 'Type an address or search term first.';
+  const setStatus = (message) => {
+    clearTimeout(statusTimer);
+    if (!message) {
+      status.textContent = '';
+      status.classList.remove('is-visible');
       return;
     }
 
-    status.textContent = `Opening via Scramjet: ${destination}`;
-    window.AesirScramjet?.open(destination);
+    status.textContent = message;
+    status.classList.add('is-visible');
+    statusTimer = setTimeout(() => {
+      status.textContent = '';
+      status.classList.remove('is-visible');
+    }, 2200);
   };
 
-  form.addEventListener('submit', (event) => {
+  const openInProxy = async (rawValue) => {
+    const destination = window.AesirScramjet?.normalizeInput(rawValue) ?? '';
+    if (!destination) {
+      setStatus('Type an address or search term first.');
+      return;
+    }
+
+    setStatus('Loading...');
+    const proxiedUrl = await window.AesirScramjet?.buildUrl(destination);
+    if (!proxiedUrl) {
+      setStatus('Unable to build Scramjet URL.');
+      return;
+    }
+    frame.src = proxiedUrl;
+  };
+
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
-    openInProxy(input.value);
+    await openInProxy(input.value);
+  });
+
+  frame.addEventListener('load', () => {
+    setStatus('Loaded.');
   });
 
   const initialUrl = new URLSearchParams(window.location.search).get('url');
