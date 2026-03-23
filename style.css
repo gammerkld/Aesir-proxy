@@ -247,12 +247,9 @@ body.home-page {
   font-size: 0.9rem;
 }
 
-#proxy-frame {
-  width: min(1200px, 100%);
-  height: calc(100vh - 210px);
+.proxy-helper {
   margin: 0 auto;
-  display: block;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 12px;
-  background: #000;
+  width: min(1200px, 100%);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.86rem;
 }

@@ -1,10 +1,10 @@
 (function () {
   const PROXY_PREFIX = '/service/scramjet/';
 
-  const frame = document.getElementById('proxy-frame');
   const form = document.getElementById('proxy-address-form');
   const input = document.getElementById('proxy-address-input');
   const status = document.getElementById('proxy-status');
+  if (!form || !input || !status) return;
 
   const normalizeInput = (value) => {
     const trimmed = value.trim();
@@ -16,7 +16,7 @@
     const looksLikeDomain = /^([\w-]+\.)+[\w-]{2,}(\/.*)?$/.test(trimmed);
     if (looksLikeDomain) return `https://${trimmed}`;
 
-    return `https://www.google.com/search?q=${encodeURIComponent(trimmed)}`;
+    return `https://duckduckgo.com/?q=${encodeURIComponent(trimmed)}`;
   };
 
   const createProxyTarget = (destination) => {
@@ -32,21 +32,13 @@
     }
 
     const proxiedUrl = createProxyTarget(destination);
-    status.textContent = `Loading: ${destination}`;
-    frame.src = proxiedUrl;
-
-    const search = new URLSearchParams(window.location.search);
-    search.set('url', destination);
-    window.history.replaceState({}, '', `${window.location.pathname}?${search.toString()}`);
+    status.textContent = `Opening via Scramjet: ${destination}`;
+    window.location.href = proxiedUrl;
   };
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     openInProxy(input.value);
-  });
-
-  frame.addEventListener('load', () => {
-    status.textContent = 'Loaded.';
   });
 
   const initialUrl = new URLSearchParams(window.location.search).get('url');

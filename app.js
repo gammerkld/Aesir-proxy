@@ -1,6 +1,7 @@
 (function () {
   const homeInput = document.getElementById('home-address-input');
   const homeForm = document.getElementById('home-address-form');
+  const PROXY_PREFIX = '/service/scramjet/';
 
   const normalizeInput = (value) => {
     const trimmed = value.trim();
@@ -12,7 +13,12 @@
     const looksLikeDomain = /^([\w-]+\.)+[\w-]{2,}(\/.*)?$/.test(trimmed);
     if (looksLikeDomain) return `https://${trimmed}`;
 
-    return `https://www.google.com/search?q=${encodeURIComponent(trimmed)}`;
+    return `https://duckduckgo.com/?q=${encodeURIComponent(trimmed)}`;
+  };
+
+  const createProxyTarget = (destination) => {
+    const encoded = encodeURIComponent(destination);
+    return `${PROXY_PREFIX}${encoded}`;
   };
 
   if (homeForm && homeInput) {
@@ -20,8 +26,7 @@
       event.preventDefault();
       const destination = normalizeInput(homeInput.value);
       if (!destination) return;
-      const target = encodeURIComponent(destination);
-      window.location.href = `proxy.html?url=${target}`;
+      window.location.href = createProxyTarget(destination);
     });
   }
 })();
