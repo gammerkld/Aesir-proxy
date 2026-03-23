@@ -2,8 +2,7 @@
   const form = document.getElementById('proxy-address-form');
   const input = document.getElementById('proxy-address-input');
   const status = document.getElementById('proxy-status');
-  const frame = document.getElementById('proxy-frame');
-  if (!form || !input || !status || !frame) return;
+  if (!form || !input || !status) return;
   let statusTimer;
 
   const setStatus = (message) => {
@@ -30,21 +29,19 @@
     }
 
     setStatus('Loading...');
-    const proxiedUrl = await window.AesirScramjet?.buildUrl(destination);
-    if (!proxiedUrl) {
+    const result = await window.AesirScramjet?.open(destination);
+    if (!result?.ok) {
       setStatus('Unable to build Scramjet URL.');
       return;
     }
-    frame.src = proxiedUrl;
+    if (result.launchType && result.launchType !== 'current') {
+      setStatus(`Opened with ${result.launchType} launch mode.`);
+    }
   };
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     await openInProxy(input.value);
-  });
-
-  frame.addEventListener('load', () => {
-    setStatus('Loaded.');
   });
 
   const initialUrl = new URLSearchParams(window.location.search).get('url');

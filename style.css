@@ -255,17 +255,19 @@ body.home-page {
   opacity: 1;
 }
 
-#proxy-frame {
+.proxy-stage {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: calc(100dvh - var(--proxy-bar-height));
-  right: 0;
-  bottom: var(--proxy-bar-height);
-  border: 0;
-  background: #000;
-  display: block;
+  inset: 0 0 var(--proxy-bar-height) 0;
+  display: grid;
+  place-content: center;
+  gap: 8px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.proxy-stage h2,
+.proxy-stage p {
+  margin: 0;
 }
 
 .bottom-browser-bar {

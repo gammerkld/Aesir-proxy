@@ -7,6 +7,7 @@
   };
 
   let controllerPromise;
+  const DEFAULT_LAUNCH = 'current';
 
   const normalizeInput = (value) => {
     const trimmed = value.trim();
@@ -54,12 +55,47 @@
 
     try {
       const proxiedUrl = await buildUrl(destination);
-      window.location.href = proxiedUrl;
-      return { ok: true, destination };
+      launchWithMode(proxiedUrl);
+      return { ok: true, destination, launchType: getLaunchType() };
     } catch (error) {
       window.location.href = toPrefixedUrl(destination);
       return { ok: true, destination, fallback: true, error };
     }
+  };
+
+  const getLaunchType = () => {
+    const mode = localStorage.getItem('launchType');
+    return mode === 'aboutBlank' || mode === 'blob' ? mode : DEFAULT_LAUNCH;
+  };
+
+  const launchWithMode = (proxiedUrl) => {
+    const launchType = getLaunchType();
+    if (launchType === 'aboutBlank') {
+      const win = window.open('about:blank', '_blank');
+      if (win && win.document) {
+        const iframe = win.document.createElement('iframe');
+        iframe.style.position = 'fixed';
+        iframe.style.inset = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        iframe.src = proxiedUrl;
+        win.document.body.style.margin = '0';
+        win.document.body.style.overflow = 'hidden';
+        win.document.body.appendChild(iframe);
+        return;
+      }
+    }
+
+    if (launchType === 'blob') {
+      const html = `<!doctype html><html><head><title>Space</title><style>html,body,iframe{margin:0;width:100%;height:100%;border:0;overflow:hidden;background:#000}</style></head><body><iframe src="${proxiedUrl}"></iframe></body></html>`;
+      const blob = new Blob([html], { type: 'text/html' });
+      const url = URL.createObjectURL(blob);
+      const win = window.open(url, '_blank');
+      if (win) return;
+    }
+
+    window.location.href = proxiedUrl;
   };
 
   const buildUrl = async (rawValue) => {
@@ -75,6 +111,8 @@
   window.AesirScramjet = {
     normalizeInput,
     buildUrl,
+    getLaunchType,
+    launchWithMode,
     open,
     toPrefixedUrl,
   };
