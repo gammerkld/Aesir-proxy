@@ -206,3 +206,92 @@ body.home-page {
   border-radius: 12px;
   background: #000000;
 }
+
+.proxy-browser-layout {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  --proxy-bar-height: 70px;
+  --proxy-status-offset: 80px;
+}
+
+.browser-go {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 700;
+  min-width: clamp(70px, 10vw, 110px);
+  height: 48px;
+  padding: 0 18px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.browser-go:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.proxy-status {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: var(--proxy-status-offset);
+  margin: 0;
+  padding: 8px 14px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+}
+
+.proxy-status.is-visible {
+  opacity: 1;
+}
+
+#proxy-frame {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100dvh - var(--proxy-bar-height));
+  right: 0;
+  bottom: var(--proxy-bar-height);
+  border: 0;
+  background: #000;
+  display: block;
+}
+
+.bottom-browser-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--proxy-bar-height);
+  box-sizing: border-box;
+  padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(8, 8, 8, 0.95);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  z-index: 3;
+}
+
+.bottom-browser-bar .blue-focus-input {
+  text-align: left;
+  font-size: 1rem;
+  padding: 14px 18px;
+}
+
+html.proxy-page,
+body.proxy-page {
+  height: 100%;
+  overflow: hidden;
+}
