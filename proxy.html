@@ -20,13 +20,13 @@
     </div>
   </nav>
 
-  <main class="browser-shell">
-    <form id="proxy-address-form" class="browser-bar" autocomplete="off">
-      <input id="proxy-address-input" class="blue-focus-input" type="text" placeholder="Enter a URL (example.com or https://example.com)">
+  <main class="proxy-browser-layout">
+    <iframe id="proxy-frame" title="Scramjet Browser"></iframe>
+    <p id="proxy-status" class="proxy-status">Ready.</p>
+    <form id="proxy-address-form" class="bottom-browser-bar" autocomplete="off">
+      <input id="proxy-address-input" class="blue-focus-input" type="text" placeholder="Search DuckDuckGo or enter an address">
       <button class="browser-go" type="submit">Go</button>
     </form>
-    <p id="proxy-status" class="proxy-status">Scramjet redirect ready.</p>
-    <p class="proxy-helper">This page sends your query through the Scramjet route instead of using an iframe.</p>
   </main>
 
   <script src="/service/scramjet/scramjet.all.js"></script>

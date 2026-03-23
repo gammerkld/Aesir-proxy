@@ -53,12 +53,8 @@
     if (!destination) return { ok: false, reason: 'empty' };
 
     try {
-      const controller = await ensureController();
-      const encodedUrl = typeof controller?.encodeUrl === 'function'
-        ? controller.encodeUrl(destination)
-        : null;
-
-      window.location.href = toPrefixedUrl(destination, encodedUrl);
+      const proxiedUrl = await buildUrl(destination);
+      window.location.href = proxiedUrl;
       return { ok: true, destination };
     } catch (error) {
       window.location.href = toPrefixedUrl(destination);
@@ -66,8 +62,19 @@
     }
   };
 
+  const buildUrl = async (rawValue) => {
+    const destination = normalizeInput(rawValue);
+    if (!destination) return '';
+    const controller = await ensureController();
+    const encodedUrl = typeof controller?.encodeUrl === 'function'
+      ? controller.encodeUrl(destination)
+      : null;
+    return toPrefixedUrl(destination, encodedUrl);
+  };
+
   window.AesirScramjet = {
     normalizeInput,
+    buildUrl,
     open,
     toPrefixedUrl,
   };
