@@ -4,18 +4,35 @@
   const status = document.getElementById('proxy-status');
   const frame = document.getElementById('proxy-frame');
   if (!form || !input || !status || !frame) return;
+  let statusTimer;
+
+  const setStatus = (message) => {
+    clearTimeout(statusTimer);
+    if (!message) {
+      status.textContent = '';
+      status.classList.remove('is-visible');
+      return;
+    }
+
+    status.textContent = message;
+    status.classList.add('is-visible');
+    statusTimer = setTimeout(() => {
+      status.textContent = '';
+      status.classList.remove('is-visible');
+    }, 2200);
+  };
 
   const openInProxy = async (rawValue) => {
     const destination = window.AesirScramjet?.normalizeInput(rawValue) ?? '';
     if (!destination) {
-      status.textContent = 'Type an address or search term first.';
+      setStatus('Type an address or search term first.');
       return;
     }
 
-    status.textContent = `Loading via Scramjet: ${destination}`;
+    setStatus('Loading...');
     const proxiedUrl = await window.AesirScramjet?.buildUrl(destination);
     if (!proxiedUrl) {
-      status.textContent = 'Unable to build Scramjet URL.';
+      setStatus('Unable to build Scramjet URL.');
       return;
     }
     frame.src = proxiedUrl;
@@ -27,7 +44,7 @@
   });
 
   frame.addEventListener('load', () => {
-    status.textContent = 'Loaded.';
+    setStatus('Loaded.');
   });
 
   const initialUrl = new URLSearchParams(window.location.search).get('url');
