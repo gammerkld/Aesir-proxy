@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="proxy-page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Æsir Proxy Browser</title>
+  <link rel="icon" type="image/png" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
+  <link rel="apple-touch-icon" href="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="proxy-page">
+  <main class="proxy-browser-layout">
+    <section class="proxy-stage" aria-label="Scramjet launch area">
+      <h2>Scramjet Ready</h2>
+      <p>Type a URL or search term below, then press Go.</p>
+    </section>
+    <p id="proxy-status" class="proxy-status" aria-live="polite"></p>
+    <form id="proxy-address-form" class="bottom-browser-bar" autocomplete="off">
+      <input id="proxy-address-input" class="blue-focus-input" type="text" placeholder="Search DuckDuckGo or enter an address">
+      <button class="browser-go" type="submit">Go</button>
+    </form>
+  </main>
+
+  <script src="/service/scramjet/scramjet.all.js"></script>
+  <script src="scramjet-client.js"></script>
+  <script src="proxy.js"></script>
+</body>
+</html>
