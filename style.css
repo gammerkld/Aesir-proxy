@@ -206,3 +206,50 @@ body.home-page {
   border-radius: 12px;
   background: #000000;
 }
+
+.browser-shell {
+  min-height: 100vh;
+  padding: 116px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.browser-bar {
+  display: flex;
+  gap: 10px;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.browser-bar .blue-focus-input {
+  text-align: left;
+}
+
+.browser-go {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-weight: 700;
+  padding: 0 22px;
+  cursor: pointer;
+}
+
+.browser-go:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.proxy-status {
+  margin: 0 auto;
+  width: min(1200px, 100%);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.proxy-helper {
+  margin: 0 auto;
+  width: min(1200px, 100%);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 0.86rem;
+}
