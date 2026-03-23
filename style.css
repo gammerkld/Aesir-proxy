@@ -211,6 +211,8 @@ body.home-page {
   position: fixed;
   inset: 0;
   overflow: hidden;
+  --proxy-bar-height: 70px;
+  --proxy-status-offset: 80px;
 }
 
 .browser-go {
@@ -232,10 +234,10 @@ body.home-page {
 }
 
 .proxy-status {
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 72px;
+  bottom: var(--proxy-status-offset);
   margin: 0;
   padding: 8px 14px;
   color: rgba(255, 255, 255, 0.7);
@@ -254,20 +256,28 @@ body.home-page {
 }
 
 #proxy-frame {
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100dvh - var(--proxy-bar-height));
+  right: 0;
+  bottom: var(--proxy-bar-height);
   border: 0;
   background: #000;
+  display: block;
 }
 
 .bottom-browser-bar {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   display: flex;
   align-items: center;
   gap: 10px;
+  min-height: var(--proxy-bar-height);
+  box-sizing: border-box;
   padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
   background: rgba(8, 8, 8, 0.95);
   border-top: 1px solid rgba(255, 255, 255, 0.16);
