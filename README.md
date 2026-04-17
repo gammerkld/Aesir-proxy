@@ -7,4 +7,4 @@ A proxy designed to tailor to the needs of our school, while not running any ads
 
 Thanks to the team behind this project, our scripter Matt, Scripter reaperrustlol.
 
-<img width="300" height="300" alt="asier" src="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78" />
+<img width="300" height="300" alt="aesir" src="https://github.com/user-attachments/assets/3bfc41d6-94e4-4492-8949-89566bf96e78" />
